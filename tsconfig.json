@@ -1,7 +1,9 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "strict": true,
+
     "paths": {
       "@/*": [
         "./*"
