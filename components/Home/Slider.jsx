@@ -30,7 +30,7 @@ export default function Slider() {
           marginBottom: 5,
         }}
       >
-        #Special for you 🤩
+        #Special for you 😎
       </Text>
       <FlatList
         data={sliderList}
