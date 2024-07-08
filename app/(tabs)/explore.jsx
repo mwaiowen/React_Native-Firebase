@@ -11,6 +11,7 @@ export default function explore() {
   const [businessList, setBusinessList] = useState([]);
 
   const getBusinessByCategory = async (category) => {
+    setBusinessList([]); // sets the explore to one item related to the category only
     const q = query(
       collection(db, "BusinessList"),
       where("category", "==", category)
