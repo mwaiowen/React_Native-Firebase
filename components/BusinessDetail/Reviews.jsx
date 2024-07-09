@@ -2,10 +2,8 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   TouchableOpacity,
   ToastAndroid,
-  FlatList,
   Image,
 } from "react-native";
 import React, { useState } from "react";

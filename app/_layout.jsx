@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { ClerkProvider, SignedOut, SignedIn } from "@clerk/clerk-expo";
 import LoginScreen from "@/components/LoginScreen";
-import * as SecureStore from "expo-constants";
+import * as SecureStore from "expo-secure-store";
 
 const tokenCache = {
   async getToken(key) {
@@ -22,9 +22,9 @@ const tokenCache = {
   },
   async saveToken(key, value) {
     try {
-      return SecureStore.setItemAsync(key, value);
+      await SecureStore.setItemAsync(key, value);
     } catch (err) {
-      return;
+      console.error("SecureStore set item error: ", err);
     }
   },
 };

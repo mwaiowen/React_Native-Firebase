@@ -16,7 +16,7 @@ export default function BusinessListCard({ business }) {
         flexDirection: "row",
         gap: 10,
       }}
-      onPress={() => router.push("/businessdetail/" + business.id)}
+      onPress={() => router.push("/businessdetail/" + business?.id)}
     >
       <Image
         source={{ uri: business.imageUrl }}
@@ -49,7 +49,7 @@ export default function BusinessListCard({ business }) {
             source={require("../../assets/images/star.png")}
             style={{ width: 15, height: 15 }}
           />
-          <Text style={{ fontFamily: "outfit" }}>4.5</Text>
+          <Text style={{ fontFamily: "outfit" }}>{business.rating} </Text>
         </View>
       </View>
     </TouchableOpacity>

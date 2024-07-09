@@ -3,6 +3,7 @@ import React from "react";
 import { useUser } from "@clerk/clerk-expo";
 import { Colors } from "@/constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
+import SearchBar from "@/constants/searchBar";
 
 export default function Header() {
   const { user } = useUser();
@@ -35,39 +36,19 @@ export default function Header() {
         />
         <View>
           <Text
-            style={{ fontFamily: "nagasaki", fontSize: 30, color: "white" }}
+            style={{ fontFamily: "outfit-bold", fontSize: 30, color: "white" }}
           >
-            Welcome,{" "}
+            Welcome,
           </Text>
           <Text
-            style={{ fontFamily: "nagasaki", fontSize: 30, color: "white" }}
+            style={{ fontFamily: "outfit-bold", fontSize: 30, color: "white" }}
           >
             {user?.fullName}
           </Text>
         </View>
       </View>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: 10,
-          alignItems: "center",
-          backgroundColor: "#fff",
-          padding: 10,
-          marginVertical: 10,
-          marginTop: 15,
-          borderRadius: 8,
-        }}
-      >
-        <FontAwesome name="search" size={24} color={Colors.PRIMARY} />
-        <TextInput
-          placeholder="Search..."
-          style={{
-            fontFamily: "outfit",
-            fontSize: 16,
-          }}
-        />
-      </View>
+      {/* Search Bar */}
+      <SearchBar />
     </View>
   );
 }
